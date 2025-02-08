@@ -1,0 +1,26 @@
+Chroma==0.2.0
+chroma-hnswlib==0.7.6
+chromadb==0.6.3
+gradio==5.15.0
+groq==0.18.0
+ipykernel==6.29.5
+langchain==0.3.18
+langchain-chroma==0.2.1
+langchain-community==0.3.17
+langchain-core==0.3.34
+langchain-groq==0.2.4
+langchain-text-splitters==0.3.6
+langgraph==0.2.70
+langgraph-checkpoint==2.0.10
+langsmith==0.3.7
+numpy==1.26.4
+pandas==2.2.3
+pydantic==2.10.6
+pydantic_core==2.27.2
+pypdf==5.2.0
+pyprojroot==0.3.0
+PyYAML==6.0.2
+setuptools==75.8.0
+SQLAlchemy==2.0.38
+
+-e .
