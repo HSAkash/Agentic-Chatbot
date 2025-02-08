@@ -20,6 +20,7 @@ pydantic==2.10.6
 pydantic_core==2.27.2
 pypdf==5.2.0
 pyprojroot==0.3.0
+python-box>=6.0.2
 PyYAML==6.0.2
 setuptools==75.8.0
 SQLAlchemy==2.0.38
