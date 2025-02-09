@@ -1,6 +1,8 @@
 Chroma==0.2.0
 chroma-hnswlib==0.7.6
 chromadb==0.6.3
+docx2txt==0.8
+gpt4all==2.8.2
 gradio==5.15.0
 groq==0.18.0
 ipykernel==6.29.5
@@ -23,6 +25,8 @@ pyprojroot==0.3.0
 python-box>=6.0.2
 PyYAML==6.0.2
 setuptools==75.8.0
+Spire.Doc==13.1.0
 SQLAlchemy==2.0.38
+tiktoken==0.8.0
 
 -e .
