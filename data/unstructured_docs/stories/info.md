@@ -1,0 +1,1 @@
+Search among the fictional stories and find the answer to the query. Input should be the query.

@@ -2,6 +2,7 @@ from pathlib import Path
 from glob import glob
 from typing import List
 from spire import doc
+from accord import logger
 from spire.doc.common import *
 from langchain_core.documents.base import Document
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
@@ -103,6 +104,12 @@ def load_directory_files(directory_path: Path) -> List[Document]:
 
     docs = []
     file_paths = glob(f"{directory_path}/*")
+    if os.path.join(os.path.split(file_paths[0])[0],'info.md') not in file_paths:
+        logger.error(f"info.md file not found in {directory_path}")
+        return docs
+    else:
+        file_paths.remove(os.path.join(os.path.split(file_paths[0])[0],'info.md'))
+        
     file_paths = sorted(file_paths)
     for file_path in file_paths:
         docs.extend(load_file(Path(file_path)))

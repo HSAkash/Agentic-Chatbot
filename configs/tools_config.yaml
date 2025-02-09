@@ -3,6 +3,7 @@ data_embedding:
   data_dir_re: data/unstructured_docs/*
   vectordb_dir: data/vectordb
   collection_name: rag-chroma
+  info_doc_name: info.md
   chunk_size: 500
   chunk_overlap: 100
   batch_size: 8
