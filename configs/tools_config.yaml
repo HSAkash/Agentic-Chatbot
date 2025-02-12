@@ -8,3 +8,6 @@ data_embedding:
   chunk_overlap: 100
   batch_size: 8
   k: 2
+
+sql_agent:
+  db_path: data/Chinook.db

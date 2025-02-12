@@ -19,7 +19,7 @@ class RAGTool:
 
     def __init__(self) -> None:
         self.retriever = {}
-        self.config = get_config(f"{here()}/configs/tools_config.yaml")
+        self.config = get_config(here("configs/tools_config.yaml"))
         self.embedding_model = GPT4AllEmbeddings()
         self.create_retriever()
         self.create_tools()

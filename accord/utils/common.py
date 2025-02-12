@@ -7,7 +7,7 @@ from box.exceptions import BoxValueError
 
 
 
-CONFIG_PATH = Path("config/config.yaml")
+CONFIG_PATH = Path("configs/tools_config.yaml")
 
 def read_yaml(path_to_yaml:Path) -> ConfigBox:
     """reads yaml file and returns
