@@ -28,25 +28,18 @@ class SQLAgentClass(metaclass=SingletonMeta):
     Attributes:
         sql_agent_llm (google gemini): The language model used for interpreting and interacting with the database.
         db (SQLDatabase): The SQL database object, representing the Chinook database.
-        full_chain (Runnable): A chain of operations that maps user questions to SQL tables and executes queries.
+        sql_agent (Runnable): An agent of operations that maps user questions to SQL tables and executes queries.
 
     Methods:
         __init__: Initializes the agent by setting up the LLM, connecting to the SQL database, and creating query chains.
 
-    Args:
-        sqldb_directory (str): The directory where the Chinook SQLite database file is located.
-        llm (str): The name of the LLM model to use (e.g., "gpt-3.5-turbo").
-        llm_temperature (float): The temperature setting for the LLM, controlling the randomness of responses.
+    
     """
 
     def __init__(self) -> None:
         """Initializes the ChinookSQLAgent with the LLM and database connection.
-
-        Args:
-            sqldb_directory (str): The directory path to the SQLite database file.
-            llm (str): The LLM model identifier (e.g., "gpt-3.5-turbo").
-            llm_temerature (float): The temperature value for the LLM, determining the randomness of the model's output.
-        """
+        The agent is created with a GoogleGenerativeAI model and a SQLDatabase object."""
+        
         self.config = get_config(here('configs/tools_config.yaml'))
         self.llm = GoogleGenerativeAI(model="gemini-pro")
 
@@ -62,8 +55,8 @@ class SQLAgentClass(metaclass=SingletonMeta):
 
 
 @tool
-def query_chinook_sqldb(query: str) -> str:
-    """Query the Chinook SQL Database. Input should be a search query."""
+def query_sqldb(query: str) -> str:
+    """Query the  SQL Database. Input should be a search query."""
     # Create an instance of ChinookSQLAgent
     sql_agent = SQLAgentClass()
     response = {}
@@ -76,4 +69,4 @@ def query_chinook_sqldb(query: str) -> str:
 
 
 if __name__ == "__main__":
-    print(query_chinook_sqldb("What are all the genres of Alanis Morissette songs?"))
+    print(query_sqldb("What are all the genres of Alanis Morissette songs?"))

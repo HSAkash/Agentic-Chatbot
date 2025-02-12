@@ -11,3 +11,7 @@ data_embedding:
 
 sql_agent:
   db_path: data/Chinook.db
+  tavily_search_max_results: 2
+
+graph_configs:
+  thread_id: 1 # This can be adjusted to assign a unique value for each user session, so it's easier to access data later on.

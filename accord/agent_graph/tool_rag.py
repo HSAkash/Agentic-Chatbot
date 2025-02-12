@@ -35,8 +35,7 @@ class RAGTool:
         for key in RAGTool.retriever.keys():
             # get tools documentation from the info file
             info_file_path = os.path.join(
-                here(),
-                self.config.data_embedding.root_dir,
+                here(self.config.data_embedding.root_dir),
                 key,
                 self.config.data_embedding.info_doc_name
             )
@@ -73,12 +72,12 @@ def {tool_name}(query: str) -> str:
         Create retriever dynamically using the RAG model.
         based on how many vector databases are available.
         """
-        for db_path in glob(f"{here()}/{self.config.data_embedding.vectordb_dir}/*"):
+        for db_path in glob(f"{here(self.config.data_embedding.vectordb_dir)}/*"):
             tool_name = os.path.basename(db_path)
             # load vector store using the Chroma vector store
             vectordb = Chroma(
                 collection_name=self.config.data_embedding.collection_name,
-                persist_directory=db_path,
+                persist_directory=str(here(db_path)),
                 embedding_function=self.embedding_model
             )
             # create a retriever using the vector store's search functionality
